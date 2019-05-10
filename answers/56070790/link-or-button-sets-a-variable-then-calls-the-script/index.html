@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--List of videos-->
+<a href="#" class="thumbnail"><img data-vidcode="rLdpnu2dDUY" src="https://img.youtube.com/vi/rLdpnu2dDUY/hqdefault.jpg"></a>
+<a href="#" class="thumbnail"><img data-vidcode="example2" src="img2.jpg"></a>
+<a href="#" class="thumbnail"><img data-vidcode="example3" src="img3.jpg"></a>
+
+<script>
+let vidcode = 'rLdpnu2dDUY';
+
+// Get all elements with classname 'thumbnail'
+let thumbnails = document.getElementsByClassName('thumbnail');
+
+// Loop for every element with class
+Array.from(thumbnails).forEach(function(element) {
+    element.addEventListener('click', thumbnailClicked);
+});
+
+function thumbnailClicked(event) {
+    // Event is mouse click event
+    // target is the img (as that is what you click on)
+    // dataset is the data attributes of img
+    vidcode = event.target.dataset.vidcode;
+    console.log('vidcode: ', vidcode)
+}
+
+</script>
+</body>
+</html>
